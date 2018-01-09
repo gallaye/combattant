@@ -1,0 +1,12 @@
+1_SELECT nom, nomobs FROM obstacle O, niveaudiff N WHERE O.idniv = N.idnv;
+
+2_SELECT nom,notemin,note,bonus, (note+bonus) AS notefinal FROM passer,soldat,participation,obstacle,niveaudiff WHERE obstacle.idniv=niveaudiff.idnv && passer.idobstacle=obstacle.idobstacle && passer.idinst=soldat.idsoldat && participation.idpart=passer.idpart && (note+bonus) 
+
+3_SELECT nom,notemin,note,bonus, (note+bonus) AS notefinal FROM passer,soldat,participation,obstacle,niveaudiff WHERE obstacle.idniv=niveaudiff.idnv && passer.idobstacle=obstacle.idobstacle && Passer.idinst=soldat.idsoldat && participation.idpart=Passer.idpart && (note+bonus) <10
+
+4_SELECT nom,notemin,note,bonus, (note+bonus) AS notefinal FROM passer,soldat,participation,obstacle,niveaudiff WHERE obstacle.idniv=niveaudiff.idnv && passer.idobstacle=obstacle.idobstacle && Passer.idinst=soldat.idsoldat && participation.idpart=Passer.idpart && (note+bonus) =0
+
+5_SELECT nom,notemin,note,bonus, (note+bonus) AS notefinal FROM passer,soldat,participation,obstacle,niveaudiff WHERE Obstacle.idniv=niveaudiff.idnv && passer.idobstacle=obstacle.idobstacle && passer.idinst=soldat.idsoldat && participation.idpart=passer.idpart && (note+bonus) =10
+
+6_SELECT nom,notemin,note,bonus, (note+bonus) AS notefinal FROM passer,soldat,participation,obstacle,niveaudiff WHERE obstacle.idniv=niveaudiff.idnv && passer.idobstacle=obstacle.idobstacle && passer.idinst=soldat.idsoldat && participation.idpart=Passer.idpart && (note+bonus)>notemin 
+
